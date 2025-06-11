@@ -1,4 +1,4 @@
-# Agricultura-Familiar-Na-escola# Projeto Agrinho 2025 - Festejando a Conexão Campo-Cidade
+# Agricultura-Familiar-Na-escola Projeto Agrinho 2025 - Festejando a Conexão Campo-Cidade#
 
 ## Descrição do Projeto
 
