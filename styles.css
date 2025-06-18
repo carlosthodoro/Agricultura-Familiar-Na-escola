@@ -1,95 +1,193 @@
-/* Reseta o estilo padrão */
+
+/* Reset básico */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Estilo básico do corpo da página */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Garante que o body ocupe a altura total da tela */
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  background-color: #fff;
+  color: #222;
+  line-height: 1.5;
+  padding: 20px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-/* Cabeçalho */
+/* Header com fundo verde */
 header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 20px;
-    text-align: center;
+  background-color: #4caf50;
+  color: white;
+  text-align: center;
+  padding: 25px 15px;
+  border-radius: 8px;
+  margin-bottom: 1.5em;
 }
 
 header h1 {
-    margin-bottom: 10px;
-    font-size: 2.5em;
+  font-size: 2.2rem;
+  margin-bottom: 0.5em;
 }
 
 header p {
-    font-size: 1.2em;
+  font-size: 1.2rem;
+  color: #e8f5e9;
 }
 
-/* Navegação */
+/* Menu navegação - horizontal */
 nav ul {
-    list-style-type: none;
-    background-color: #333;
-    padding: 10px;
-    text-align: center;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 20px;
+  list-style: none;
+  display: flex;
+  gap: 12px;
+  background-color: #4caf50;
+  padding: 10px 15px;
+  border-radius: 6px;
+  margin-bottom: 2em;
+  flex-wrap: wrap;
 }
 
 nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.2em;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
 }
 
+nav ul li a.active,
 nav ul li a:hover {
-    text-decoration: underline;
+  background-color: #388e3c;
 }
 
-/* Estilo das seções */
+/* Seções */
 section {
-    padding: 20px;
-    margin: 20px;
-    background-color: white;
-    border-radius: 8px;
-    flex-grow: 1; /* Isso garante que o conteúdo ocupe o espaço disponível */
+  margin-bottom: 2em;
 }
 
 section h2 {
-    margin-bottom: 15px;
-    font-size: 2em;
+  font-size: 1.6rem;
+  margin-bottom: 0.5em;
+  color: #2e7d32;
 }
 
-section p {
-    font-size: 1.2em;
+section ul {
+  margin-left: 1.2em;
+  margin-top: 0.8em;
+  margin-bottom: 1em;
+  list-style-type: disc;
 }
 
-/* Estilo de lista */
-ul {
-    margin-top: 10px;
-    font-size: 1.1em;
-    margin-left: 20px;
+section ul li {
+  margin-bottom: 0.4em;
+  line-height: 1.3;
 }
 
-ul li {
-    margin-bottom: 10px;
-}
-
-/* Rodapé */
+/* Footer */
 footer {
-    text-align: center;
-    padding: 15px;
-    background-color: #333;
-    color: white;
-    width: 100%;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+  padding: 15px 0;
+  border-top: 1px solid #ddd;
+  margin-top: 3em;
+}
+
+/* ======== Botões fixos acessibilidade ======== */
+#acessibilidade-container {
+  position: fixed;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 9999;
+}
+
+#acessibilidade-container button {
+  background-color: #4caf50;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 1.8rem;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+}
+
+#acessibilidade-container button:hover,
+#acessibilidade-container button:focus {
+  background-color: #388e3c;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.35);
+  outline: none;
+}
+
+/* ======== Modo alto contraste ======== */
+.high-contrast {
+  background-color: #000 !important;
+  color: #ff0 !important;
+}
+
+.high-contrast a {
+  color: #ff0 !important;
+}
+
+.high-contrast nav ul {
+  background-color: #000 !important;
+}
+
+.high-contrast nav ul li a.active,
+.high-contrast nav ul li a:hover {
+  background-color: #ff0 !important;
+  color: #000 !important;
+}
+
+/* Botão ativo menu */
+.menu-btn.active {
+  background-color: #388e3c !important;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  #acessibilidade-container {
+    right: 10px;
+  }
+}
+#btnVoltarTopo {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 50%;
+  font-size: 1.6rem;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10000;
+}
+
+#btnVoltarTopo:hover {
+  background-color: #388e3c;
+}
+
+/* Mostrar o botão quando o usuário rolar a página para baixo */
+#btnVoltarTopo.show {
+  opacity: 1;
+  pointer-events: auto;
 }
